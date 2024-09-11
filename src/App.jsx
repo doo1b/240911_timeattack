@@ -69,7 +69,11 @@ function App() {
     queryFn: getProfile,
   });
 
-  const { data: comments, refetch } = useQuery({
+  const {
+    data: comments,
+    refetch,
+    isLoading: commentsLoading,
+  } = useQuery({
     queryKey: ["comment", selectedPostId],
     queryFn: ({ queryKey }) => getComment(queryKey[1]),
     enabled: !!selectedPostId,
@@ -90,7 +94,8 @@ function App() {
   });
 
   if (postsError || profileError) return <p>오류가 발생하였습니다...</p>;
-  if (postsLoading || profileLoading) return <p>로딩중입니다...</p>;
+  if (postsLoading || profileLoading || commentsLoading)
+    return <p>로딩중입니다...</p>;
 
   return (
     <>
@@ -114,7 +119,7 @@ function App() {
         <button type="submit">추가</button>
       </form>
       <div>
-        {posts?.map((post) => (
+        {posts.map((post) => (
           <div key={post.id}>
             <p>{post.title}</p>
             <p>{post.views}</p>
@@ -128,7 +133,7 @@ function App() {
             </button>
             {selectedPostId === post.id && (
               <div>
-                {comments?.map((comment) => (
+                {comments.map((comment) => (
                   <div key={comment.id}>
                     <p>{comment.text}</p>
                   </div>
