@@ -26,6 +26,36 @@
       "id": "2",
       "text": "another comment about post 1",
       "postId": "1"
+    },
+    {
+      "id": "a920",
+      "text": "추가",
+      "postId": "1"
+    },
+    {
+      "id": "b556",
+      "text": "잘되니",
+      "postId": "1"
+    },
+    {
+      "id": "3e1b",
+      "text": "테스트",
+      "postId": "2"
+    },
+    {
+      "id": "21b8",
+      "text": "제발 .. ~",
+      "postId": "1"
+    },
+    {
+      "id": "8395",
+      "text": "오 된다",
+      "postId": "2"
+    },
+    {
+      "id": "ee60",
+      "text": "ㅇㄴㄹ",
+      "postId": "2"
     }
   ],
   "profile": {
