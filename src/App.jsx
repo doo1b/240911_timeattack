@@ -11,8 +11,6 @@ function App() {
     views: "",
   });
 
-  console.log(newPost);
-
   const handleInputChange = (value, key) => {
     setNewPost({ ...newPost, [key]: value });
   };
